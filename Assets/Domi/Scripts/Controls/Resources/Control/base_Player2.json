@@ -1,0 +1,46 @@
+{
+  "bindings": [
+    {
+      "action": "Player/RotateL",
+      "id": "d5817cc7-04dc-4f65-aa36-9ed79f5ef592",
+      "path": "<Keyboard>/u",
+      "interactions": "null",
+      "processors": "null"
+    },
+    {
+      "action": "Player/RotateR",
+      "id": "dae2d75c-a865-4b02-89bc-43a47d1273bc",
+      "path": "<Keyboard>/o",
+      "interactions": "null",
+      "processors": "null"
+    },
+    {
+      "action": "Player/2D Vector/up",
+      "id": "e2062cb9-1b15-46a2-838c-2f8d72a0bdd9",
+      "path": "<Keyboard>/i",
+      "interactions": "null",
+      "processors": "null"
+    },
+    {
+      "action": "Player/2D Vector/down",
+      "id": "320bffee-a40b-4347-ac70-c210eb8bc73a",
+      "path": "<Keyboard>/k",
+      "interactions": "null",
+      "processors": "null"
+    },
+    {
+      "action": "Player/2D Vector/left",
+      "id": "d2581a9b-1d11-4566-b27d-b92aff5fabbc",
+      "path": "<Keyboard>/j",
+      "interactions": "null",
+      "processors": "null"
+    },
+    {
+      "action": "Player/2D Vector/right",
+      "id": "fcfe95b8-67b9-4526-84b5-5d0bc98d6400",
+      "path": "<Keyboard>/l",
+      "interactions": "null",
+      "processors": "null"
+    }
+  ]
+}
