@@ -17,7 +17,7 @@ public class ShopPanelUI : MonoBehaviour, IPopup
 
     private void Update()
     {
-        if (Keyboard.current.qKey.wasPressedThisFrame)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
             OpenPopup(1);
     }
 

@@ -45,12 +45,30 @@ public abstract class Block : MonoBehaviour
 
     private void ApplyGravity()
     {
-        if (!_isInShop)
+        if (_isInShop)
         {
-            _rbComponent.gravityScale = _blockStatSO.mass;
+            _rbComponent.constraints = RigidbodyConstraints2D.FreezeRotation;
+            _rbComponent.gravityScale = 0;
         }
         else
-            _rbComponent.gravityScale = 0;
+        {
+            _rbComponent.constraints = RigidbodyConstraints2D.None;
+            _rbComponent.gravityScale = _blockStatSO.mass;
+            transform.parent = null;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            _isInShop = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // 몇 초 기다렸다가 패널 닫기
     }
 
     private void OnDestroy()
