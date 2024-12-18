@@ -30,7 +30,6 @@ public class GroundBox : MonoBehaviour
             }
         }
 
-        print($"maxHeight: {maxHeight}");
         return maxHeight;
     }
     
