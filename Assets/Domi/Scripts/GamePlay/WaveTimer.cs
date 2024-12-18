@@ -30,6 +30,7 @@ public class WaveTimer : MonoBehaviour
 
     private void OnBlockAdded(GroundDetectBlock block)
     {
+        print($"OnBlockAdded {waveSys.IsAttack} {timerProcess}");
         if (waveSys.IsAttack || timerProcess) return; // 자연재해 중임
         
         // 타이머 시작 ㄱㄱ
@@ -45,7 +46,14 @@ public class WaveTimer : MonoBehaviour
     }
 
     private void Update() {
+        // print($"waveSys.IsAttack {waveSys.IsAttack}");
         if (!timerProcess || timeSec < 0) return;
-        timeSec = Mathf.Max(0, Time.deltaTime);
+        timeSec = Mathf.Max(0, timeSec - Time.deltaTime);
+        
+        // 시간 끗
+        if (timeSec == 0) {
+            timerProcess = false; // 자동 종료
+            waveSys.OnTimerEnd();
+        }
     }
 }
