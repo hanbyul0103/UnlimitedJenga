@@ -19,6 +19,7 @@ public class WaveSystemSO : ScriptableObject
 
     private void OnEnable() {
         IsAttack = false;
+        AttackStartHeight = 0;
     }
 
     public void SetWave(int value) {
