@@ -9,6 +9,8 @@ public class ShopPanelUI : MonoBehaviour, IPopup
 
     public List<Block> blocks = new List<Block>(4);
     public List<Transform> points = new List<Transform>(4);
+    //public List<System.Action> handlers = new List<System.Action>(4);
+    private Dictionary<Block, System.Action> handlers = new();
     public List<BoxCollider2D> spawnedBlockColliders = new List<BoxCollider2D>();
 
     [SerializeField] private float _originPositionX;
@@ -50,10 +52,14 @@ public class ShopPanelUI : MonoBehaviour, IPopup
         {
             if (blocks[i] == null)
             {
-                blocks[i] = _blockContainerSO.PickRandomBlock();
-
-                Block block = Instantiate(blocks[i], points[i].position, Quaternion.identity);
+                Block block = blocks[i] = Instantiate(_blockContainerSO.PickRandomBlock(), points[i].position, Quaternion.identity);
                 block.transform.SetParent(points[i], true);
+
+                handlers[block] = () =>
+                {
+                    HandleBlockTag(block);
+                };
+                block.OnTagEvent += handlers[block];
 
                 spawnedBlockColliders.Add(block.GetComponent<BoxCollider2D>());
             }
@@ -68,6 +74,17 @@ public class ShopPanelUI : MonoBehaviour, IPopup
                 Physics2D.IgnoreCollision(spawnedBlockColliders[k], spawnedBlockColliders[i]);
             }
         }
+    }
+
+    private void HandleBlockTag(Block block)
+    {
+        block.OnTagEvent -= handlers[block];
+        handlers.Remove(block);
+
+        int idx = blocks.IndexOf(block);
+        print($"{idx} / {block}");
+        if (idx >= 0)
+            blocks[idx] = null;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

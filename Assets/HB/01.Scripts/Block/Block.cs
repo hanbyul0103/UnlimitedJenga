@@ -7,6 +7,8 @@ public abstract class Block : MonoBehaviour
     public event Action OnHitEvent;
     public event Action OnDeadEvent;
 
+    public event Action OnTagEvent;
+
     [Header("Reference")]
     private Rigidbody2D _rigidbody;
 
@@ -14,7 +16,6 @@ public abstract class Block : MonoBehaviour
     public BlockStatSO _blockStatSO;
 
     [Header("Info")]
-    [SerializeField] private bool _isInShop = true;
     [SerializeField] private bool _isGrounded = false;
     public bool IsGrounded => _isGrounded;
 
@@ -25,43 +26,32 @@ public abstract class Block : MonoBehaviour
         OnLandEvent += HandleLandEvent;
         OnHitEvent += HandleHitEvent;
         OnDeadEvent += HandleDeadEvent;
+
+        OnTagEvent += HandleTagEvent;
     }
 
     private void Start()
     {
-        Debug.Log(_blockStatSO.cost);
-    }
-
-    private void Update()
-    {
-        CheckIsInShop();
+        _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _rigidbody.gravityScale = 0;
     }
 
     public abstract void HandleLandEvent(bool hasAbility);
     public abstract void HandleHitEvent();
     public abstract void HandleDeadEvent();
 
-    private void CheckIsInShop()
+    public void HandleTagEvent()
     {
-        if (_isInShop)
-        {
-            _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-            _rigidbody.gravityScale = 0;
-        }
-        else
-        {
-            _rigidbody.constraints = RigidbodyConstraints2D.None;
-            _rigidbody.gravityScale = _blockStatSO.mass;
-            transform.parent = null;
-        }
+        _rigidbody.constraints = RigidbodyConstraints2D.None;
+        _rigidbody.gravityScale = _blockStatSO.mass;
+        transform.parent = null;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            _isInShop = false;
-
+            OnTagEvent?.Invoke();
         }
     }
 
@@ -70,5 +60,7 @@ public abstract class Block : MonoBehaviour
         OnLandEvent -= HandleLandEvent;
         OnHitEvent -= HandleHitEvent;
         OnDeadEvent -= HandleDeadEvent;
+
+        OnTagEvent -= HandleTagEvent;
     }
 }
