@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8942288595976452461}
   - component: {fileID: 8440732765776392866}
   - component: {fileID: 8292463460147120138}
-  - component: {fileID: 1134532441506322249}
+  - component: {fileID: 388399462840921019}
   m_Layer: 8
   m_Name: FixBlock
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5176105761648776745}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1134532441506322249
+--- !u!114 &388399462840921019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5176105761648776745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c91141d3996eb5e4bbad60bbeebf7340, type: 3}
+  m_Script: {fileID: 11500000, guid: b374454c7853c2f439c32a014267bc23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _blockStatSO: {fileID: 11400000, guid: d831d59cf3e228745bb838b82f36c877, type: 2}

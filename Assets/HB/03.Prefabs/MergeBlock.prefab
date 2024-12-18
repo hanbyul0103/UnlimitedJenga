@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8501037191539668975}
   - component: {fileID: 8389331770387499738}
   - component: {fileID: 6312046118430377427}
-  - component: {fileID: 1564125082607035727}
+  - component: {fileID: 7033675079612661963}
   m_Layer: 8
   m_Name: MergeBlock
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2928031681743724159}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1564125082607035727
+--- !u!114 &7033675079612661963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2928031681743724159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c91141d3996eb5e4bbad60bbeebf7340, type: 3}
+  m_Script: {fileID: 11500000, guid: d0576bac9e24f9e4aba420f8e6cddb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _blockStatSO: {fileID: 11400000, guid: 1934c863e75c70249a9f8dfff05db70f, type: 2}
