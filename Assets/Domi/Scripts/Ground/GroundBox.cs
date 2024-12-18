@@ -26,7 +26,7 @@ public class GroundBox : MonoBehaviour
     }
     
     public float GetMaxHeight() {
-        float maxHeight = float.MinValue;
+        float maxHeight = transform.position.y;
         foreach (var block in blocks) {
             float height = block.transform.position.y + block.GetHeight() / 2f;
             if (height > maxHeight) {

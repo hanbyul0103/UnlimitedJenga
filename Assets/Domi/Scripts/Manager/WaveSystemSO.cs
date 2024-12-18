@@ -21,7 +21,7 @@ public class WaveSystemSO : ScriptableObject
 
     public void SetWave(int value) {
         waveCount = value;
-        AttackStartHeight = value * 3;
+        AttackStartHeight = value * 6;
         DeadHeight = AttackStartHeight - 5f;
 
         OnChangeWaveCount?.Invoke();
