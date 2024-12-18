@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ShopPanelUI : MonoBehaviour, IPopup
@@ -8,8 +9,8 @@ public class ShopPanelUI : MonoBehaviour, IPopup
 
     public List<Block> blocks = new List<Block>(4);
     public List<Transform> points = new List<Transform>(4);
-    //public List<System.Action> handlers = new List<System.Action>(4);
     private Dictionary<Block, System.Action> handlers = new();
+    public List<TextMeshPro> costs = new List<TextMeshPro>(4);
 
     [SerializeField] private float _originPositionX;
     [SerializeField] private float _targetPositionX;
@@ -54,6 +55,8 @@ public class ShopPanelUI : MonoBehaviour, IPopup
                 Block block = blocks[i] = Instantiate(_blockContainerSO.PickRandomBlock(), points[i].position, Quaternion.identity);
                 block.transform.SetParent(points[i], true);
 
+                costs[i].text = $"{block._blockStatSO.cost}$";
+
                 handlers[block] = () =>
                 {
                     HandleBlockTag(block);
@@ -82,6 +85,7 @@ public class ShopPanelUI : MonoBehaviour, IPopup
         if (collision.CompareTag("Player"))
         {
             _count++;
+            print(_count);
 
             if (_count == 2)
                 OpenPopup(1);
