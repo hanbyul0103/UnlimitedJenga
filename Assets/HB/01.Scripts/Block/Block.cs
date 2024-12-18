@@ -57,6 +57,8 @@ public abstract class Block : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _count++;
+            print(_count);
+            print(collision.gameObject.name);
 
             if (_count == 2)
                 OnTagEvent?.Invoke();
