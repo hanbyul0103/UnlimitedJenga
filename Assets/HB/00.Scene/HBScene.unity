@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 87344922}
   - component: {fileID: 87344924}
   - component: {fileID: 87344923}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cost_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 237539733}
   - component: {fileID: 237539735}
   - component: {fileID: 237539734}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cost_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 248103620}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Point_2
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 304224203}
   - component: {fileID: 304224205}
   - component: {fileID: 304224204}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TrashPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -847,7 +847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738377521}
   - component: {fileID: 738377522}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 947025391}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Point_1
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -1021,7 +1021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1259702326}
   - component: {fileID: 1259702327}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1108,7 +1108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1366914344}
   - component: {fileID: 1366914345}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1197,7 +1197,7 @@ GameObject:
   - component: {fileID: 1405340881}
   - component: {fileID: 1405340882}
   - component: {fileID: 1405340883}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TrashCanImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1345,7 +1345,7 @@ GameObject:
   - component: {fileID: 1469021035}
   - component: {fileID: 1469021036}
   - component: {fileID: 1469021034}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ShopPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1506,7 +1506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1500120913}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Point_4
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -1539,7 +1539,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505574490}
   - component: {fileID: 1505574489}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1764,7 +1764,7 @@ GameObject:
   - component: {fileID: 1881252946}
   - component: {fileID: 1881252948}
   - component: {fileID: 1881252947}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cost_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1940,7 +1940,7 @@ GameObject:
   - component: {fileID: 1956663214}
   - component: {fileID: 1956663216}
   - component: {fileID: 1956663215}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Cost_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2114,7 +2114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2103831736}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Point_3
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -2353,7 +2353,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bb9875751b56ea648b08396a4763f1e0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2380,7 +2380,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bb9875751b56ea648b08396a4763f1e0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
