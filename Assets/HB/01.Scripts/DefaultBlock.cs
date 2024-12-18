@@ -1,10 +1,11 @@
 using System;
+using UnityEngine;
 
 public class DefaultBlock : Block
 {
     public override void HandleLandEvent(bool hasAbility)
     {
-        throw new NotImplementedException();
+        Debug.Log($"HasAbility: {hasAbility}");
     }
 
     public override void HandleHitEvent()

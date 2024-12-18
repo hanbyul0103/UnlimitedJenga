@@ -15,3 +15,4 @@ MonoBehaviour:
   mass: 2
   health: 100
   cost: 50
+  hasAbility: 0

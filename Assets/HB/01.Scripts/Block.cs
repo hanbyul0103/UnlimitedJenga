@@ -3,8 +3,6 @@ using UnityEngine;
 
 public abstract class Block : MonoBehaviour
 {
-    public BlockStatSO _blockStatSO;
-
     public event Action<bool> OnLandEvent; // 착지햇을때 스킬이 있으면 true
     public event Action OnHitEvent;
     public event Action OnDeadEvent;
@@ -12,18 +10,23 @@ public abstract class Block : MonoBehaviour
     [Header("Reference")]
     private Rigidbody2D _rbComponent;
 
-    [SerializeField] private bool _isInShop = true;
+    [Header("Setting")]
+    public BlockStatSO _blockStatSO;
+    [SerializeField] private Transform _groundCheckerTransform;
+    [SerializeField] private Vector2 _groundCheckerSize;
 
-    private void OnEnable()
-    {
-        OnLandEvent += HandleLandEvent;
-        OnHitEvent += HandleHitEvent;
-        OnDeadEvent += HandleDeadEvent;
-    }
+    [Header("Info")]
+    [SerializeField] private bool _isInShop = true;
+    [SerializeField] private bool _isGrounded = false;
+    public bool IsGrounded => _isGrounded;
 
     private void Awake()
     {
         _rbComponent = GetComponent<Rigidbody2D>();
+
+        OnLandEvent += HandleLandEvent;
+        OnHitEvent += HandleHitEvent;
+        OnDeadEvent += HandleDeadEvent;
     }
 
     private void Start()
