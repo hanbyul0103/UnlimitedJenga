@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfaa21118dfa34d41b00c2cb27223bac, type: 3}
+  m_Name: BlockContainerSO
+  m_EditorClassIdentifier: 
+  blocks:
+  - {fileID: 6659731137782209182, guid: 44a94932b7d8c34488e67ee735f5690f, type: 3}
+  - {fileID: 730701429085575843, guid: 2b78ff3eae1c5a347a3beaa75142680c, type: 3}
+  - {fileID: 1729822313006851080, guid: 1451b44f7f0e95345b17eb2aea2b7964, type: 3}
+  - {fileID: 7033675079612661963, guid: 31a59aaaab7c7fe45866df6f55223874, type: 3}
+  - {fileID: 388399462840921019, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
