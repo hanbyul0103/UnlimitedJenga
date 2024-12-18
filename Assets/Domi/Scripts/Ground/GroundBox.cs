@@ -18,5 +18,6 @@ public class GroundBox : MonoBehaviour
 
     public void RemoveBlock(GroundDetectBlock block) {
         blocks.Remove(block);
+        print($"Remove Blocks count: {blocks.Count}");
     }
 }
