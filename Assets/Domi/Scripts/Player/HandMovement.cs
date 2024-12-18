@@ -50,8 +50,6 @@ public class HandMovement : AgentMovement
         if (downRotateL)
             plusRotate += rotateSpeed;
 
-
-        print($"[{gameObject.name}] Move Rotation {rigid.rotation} + {plusRotate}");
         rigid.MoveRotation(rigid.rotation + plusRotate);
     }
 
