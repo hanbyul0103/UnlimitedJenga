@@ -11,15 +11,19 @@ public class MainCam : MonoBehaviour
     [SerializeField] private float testHeight;
 
     GroundBox groundBox;
-    CinemachineRotationComposer composer;
+    // CinemachineRotationComposer composer;
+    CinemachineCamera cinemachineCam;
 
     private void Awake() {
         groundBox = FindAnyObjectByType<GroundBox>();
-        composer = GetComponent<CinemachineRotationComposer>();
+        cinemachineCam = GetComponent<CinemachineCamera>();
+        // composer = GetComponent<CinemachineRotationComposer>();
     }
 
     private void Update()
     {
+        if (!CinemachineCore.IsLive(cinemachineCam)) return; // ㅃㅃ
+
         float blockMaxY = groundBox.GetMaxHeight();
         // float blockMaxY = testHeight;
 

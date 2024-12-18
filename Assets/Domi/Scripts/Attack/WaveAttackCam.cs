@@ -34,6 +34,6 @@ public class WaveAttackCam : MonoBehaviour
 
     private void HandleAttackFinish()
     {
-        cam.Priority = 0;
+        cam.Priority = -1;
     }
 }

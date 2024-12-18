@@ -10,6 +10,7 @@ public class WaveSystemSO : ScriptableObject
     private float lastAttackStartHeight = 0; // 이전 높이
     public float  DeadHeight { get; private set; } = 0;
     [field: SerializeField] public float AttackDuration = 30; // 자연재해 지속 시간
+    [SerializeField] private float deadLineSize = 0.75f;
     public int LineUpDuration { get; private set; } = 60 * 10; // 라인 까지 쌓아야 하는 시간
     
     public event Action OnChangeWaveCount;
@@ -26,7 +27,7 @@ public class WaveSystemSO : ScriptableObject
         waveCount = value;
         lastAttackStartHeight = AttackStartHeight;
         AttackStartHeight = value * 6;
-        DeadHeight = AttackStartHeight - 5f;
+        DeadHeight = AttackStartHeight * deadLineSize;
 
         OnChangeWaveCount?.Invoke();
     }
@@ -53,5 +54,10 @@ public class WaveSystemSO : ScriptableObject
         OnBeforeAttackStart?.Invoke(new Vector2(lastAttackStartHeight, AttackStartHeight));
 
         Debug.Log("자연재해 ㄱㄱ");
+    }
+
+    public void HandleDeadLineLow() {
+        IsAttack = false;
+        Debug.Log("데드라인 아래 있음 (끝)");
     }
 }
