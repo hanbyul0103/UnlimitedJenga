@@ -8,7 +8,7 @@ public abstract class Block : MonoBehaviour
     public event Action OnDeadEvent;
 
     [Header("Reference")]
-    private Rigidbody2D _rbComponent;
+    private Rigidbody2D _rigidbody;
 
     [Header("Setting")]
     public BlockStatSO _blockStatSO;
@@ -22,7 +22,7 @@ public abstract class Block : MonoBehaviour
 
     private void Awake()
     {
-        _rbComponent = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
 
         OnLandEvent += HandleLandEvent;
         OnHitEvent += HandleHitEvent;
@@ -47,13 +47,13 @@ public abstract class Block : MonoBehaviour
     {
         if (_isInShop)
         {
-            _rbComponent.constraints = RigidbodyConstraints2D.FreezeRotation;
-            _rbComponent.gravityScale = 0;
+            _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            _rigidbody.gravityScale = 0;
         }
         else
         {
-            _rbComponent.constraints = RigidbodyConstraints2D.None;
-            _rbComponent.gravityScale = _blockStatSO.mass;
+            _rigidbody.constraints = RigidbodyConstraints2D.None;
+            _rigidbody.gravityScale = _blockStatSO.mass;
             transform.parent = null;
         }
     }

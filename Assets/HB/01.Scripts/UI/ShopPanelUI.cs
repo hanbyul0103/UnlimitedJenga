@@ -9,6 +9,7 @@ public class ShopPanelUI : MonoBehaviour, IPopup
 
     public List<Block> blocks = new List<Block>(4);
     public List<Transform> points = new List<Transform>(4);
+    public List<BoxCollider2D> spawnedBlockColliders = new List<BoxCollider2D>();
 
     [SerializeField] private float _originPositionX;
     [SerializeField] private float _targetPositionX;
@@ -44,15 +45,25 @@ public class ShopPanelUI : MonoBehaviour, IPopup
 
     private void SettingBlock()
     {
+        // ·£´ý»Ì±â
         for (int i = 0; i < 4; i++)
         {
-            blocks.Add(_blockContainerSO.PickRandomBlock());
+            if (blocks[i] == null)
+            {
+                blocks[i] = _blockContainerSO.PickRandomBlock();
+
+                Block block = Instantiate(blocks[i], points[i].position, Quaternion.identity);
+                block.transform.SetParent(points[i], true);
+
+                spawnedBlockColliders.Add(block.GetComponent<BoxCollider2D>());
+            }
         }
 
-        for (int i = 0; i < 4; i++)
+        // ignore collider
+        for (int i = 0; i < spawnedBlockColliders.Count; i++)
         {
-            Block block = Instantiate(blocks[i], points[i].position, Quaternion.identity);
-            block.transform.SetParent(points[i], true);
+            Physics2D.IgnoreCollision(spawnedBlockColliders[i], spawnedBlockColliders[(i + 1) % spawnedBlockColliders.Count]);
         }
+
     }
 }
