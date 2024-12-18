@@ -1,9 +1,11 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class WaveTimer : MonoBehaviour
 {
     [SerializeField] private WaveSystemSO waveSys;
+    [SerializeField] private TextMeshProUGUI timerText;
     private GroundBox groundBox;
     private bool timerProcess = false; // 타이머 실행중
     private float timeSec = 0; // 타임 초
@@ -23,7 +25,7 @@ public class WaveTimer : MonoBehaviour
 
     private void HandleAttackBefore(Vector2 range)
     {
-        timeSec = waveSys.AttackDuration;
+        SetTimer(waveSys.AttackDuration);
         timerProcess = true;
     }
 
@@ -49,19 +51,31 @@ public class WaveTimer : MonoBehaviour
     private void BlockStackTimerStart() {
         print("BlockStackTimerStart");
 
-        timeSec = waveSys.LineUpDuration;
+        SetTimer(waveSys.LineUpDuration);
         timerProcess = true;
     }
 
     private void Update() {
         // print($"waveSys.IsAttack {waveSys.IsAttack}");
         if (!timerProcess || timeSec < 0) return;
-        timeSec = Mathf.Max(0, timeSec - Time.deltaTime);
+        SetTimer(Mathf.Max(0, timeSec - Time.deltaTime));
+        UpdateTimerText();
         
         // 시간 끗
         if (timeSec == 0) {
             timerProcess = false; // 자동 종료
             waveSys.OnTimerEnd();
         }
+    }
+
+    private void SetTimer(float time) {
+        timeSec = time;
+        UpdateTimerText();
+    }
+
+    void UpdateTimerText() {
+        int min = (int)timeSec / 60;
+        int sec = (int)timeSec % 60;
+        timerText.text = $"{min:00}:{sec:00}";
     }
 }
