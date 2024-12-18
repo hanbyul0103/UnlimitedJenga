@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
 
 public class GoalLine : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class GoalLine : MonoBehaviour
 
     private void HandleChangeWaveCount()
     {
-        transform.position = new Vector3(0, waveSys.AttackStartHeight, 0);
+        // transform.position = new Vector3(0, waveSys.AttackStartHeight, 0);
+        transform.DOMoveY(waveSys.AttackStartHeight, 0.5f).SetEase(Ease.OutQuad);
         heightT.text = $"{waveSys.AttackStartHeight}m";
     }
 
