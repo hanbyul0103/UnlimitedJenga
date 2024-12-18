@@ -15,6 +15,7 @@ public class ShopPanelUI : MonoBehaviour, IPopup
     [SerializeField] private float _targetPositionX;
 
     private bool _isTweening;
+    [SerializeField] private int _count;
 
     private void Update()
     {
@@ -24,7 +25,7 @@ public class ShopPanelUI : MonoBehaviour, IPopup
 
     public void OpenPopup(float _duration)
     {
-        if (_isTweening) return; // 이전에 있던 트윈 킬하고 열기
+        if (_isTweening) transform.DOKill();
 
         _isTweening = true;
 
@@ -36,7 +37,7 @@ public class ShopPanelUI : MonoBehaviour, IPopup
 
     public void ClosePopup(float _duration)
     {
-        if (_isTweening) return; // 이전에 있던 트윈 킬하고 닫기
+        if (_isTweening) transform.DOKill();
 
         _isTweening = true;
         transform.DOMoveX(_originPositionX, _duration)
@@ -45,7 +46,6 @@ public class ShopPanelUI : MonoBehaviour, IPopup
 
     private void SettingBlock()
     {
-        // 랜덤뽑기
         for (int i = 0; i < 4; i++)
         {
             if (blocks[i] == null)
@@ -59,11 +59,32 @@ public class ShopPanelUI : MonoBehaviour, IPopup
             }
         }
 
-        // ignore collider
         for (int i = 0; i < spawnedBlockColliders.Count; i++)
         {
-            Physics2D.IgnoreCollision(spawnedBlockColliders[i], spawnedBlockColliders[(i + 1) % spawnedBlockColliders.Count]);
+            for (int k = 0; k < spawnedBlockColliders.Count; k++)
+            {
+                if (i == k) continue;
+                Physics2D.IgnoreCollision(spawnedBlockColliders[i], spawnedBlockColliders[k]);
+                Physics2D.IgnoreCollision(spawnedBlockColliders[k], spawnedBlockColliders[i]);
+            }
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+            _count++;
+
+        if (_count == 2)
+            OpenPopup(1);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+            _count--;
+
+        if (_count == 0)
+            ClosePopup(1);
     }
 }

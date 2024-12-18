@@ -294,11 +294,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4942677255348124270, guid: 9b9947947dfb6464092db177e5210fad, type: 3}
       propertyPath: m_Name
-      value: Hand (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942677255348124270, guid: 9b9947947dfb6464092db177e5210fad, type: 3}
-      propertyPath: m_TagString
-      value: Player
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 6385593495759001804, guid: 9b9947947dfb6464092db177e5210fad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -340,10 +336,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 7087678857209616530, guid: 9b9947947dfb6464092db177e5210fad, type: 3}
-      propertyPath: <Control>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: af0c38d4dec9ff14ebcf24b4279972ca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -359,11 +351,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4942677255348124270, guid: 9b9947947dfb6464092db177e5210fad, type: 3}
       propertyPath: m_Name
-      value: Hand
-      objectReference: {fileID: 0}
-    - target: {fileID: 4942677255348124270, guid: 9b9947947dfb6464092db177e5210fad, type: 3}
-      propertyPath: m_TagString
-      value: Player
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 6385593495759001804, guid: 9b9947947dfb6464092db177e5210fad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -405,6 +393,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7087678857209616530, guid: 9b9947947dfb6464092db177e5210fad, type: 3}
+      propertyPath: <Control>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: fbe1deb792b7fd54f99191afec77f593, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -569,6 +561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505574490}
   - component: {fileID: 1505574489}
+  - component: {fileID: 1505574492}
   - component: {fileID: 1505574491}
   m_Layer: 0
   m_Name: ShopPanel
@@ -678,6 +671,53 @@ MonoBehaviour:
   spawnedBlockColliders: []
   _originPositionX: -16
   _targetPositionX: -2
+  _count: 0
+--- !u!61 &1505574492
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505574488}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1670541886
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,8 +12,6 @@ public abstract class Block : MonoBehaviour
 
     [Header("Setting")]
     public BlockStatSO _blockStatSO;
-    [SerializeField] private Transform _groundCheckerTransform;
-    [SerializeField] private Vector2 _groundCheckerSize;
 
     [Header("Info")]
     [SerializeField] private bool _isInShop = true;
@@ -34,16 +32,16 @@ public abstract class Block : MonoBehaviour
         Debug.Log(_blockStatSO.cost);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        ApplyGravity();
+        CheckIsInShop();
     }
 
     public abstract void HandleLandEvent(bool hasAbility);
     public abstract void HandleHitEvent();
     public abstract void HandleDeadEvent();
 
-    private void ApplyGravity()
+    private void CheckIsInShop()
     {
         if (_isInShop)
         {
@@ -63,12 +61,8 @@ public abstract class Block : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             _isInShop = false;
-        }
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        // 몇 초 기다렸다가 패널 닫기
+        }
     }
 
     private void OnDestroy()
