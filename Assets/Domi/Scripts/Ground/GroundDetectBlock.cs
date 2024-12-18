@@ -56,4 +56,8 @@ public class GroundDetectBlock : MonoBehaviour, IBlockOutHandler
         // 바닥에 아무것도 없음
         GroundExit();
     }
+    
+    public float GetHeight() {
+        return _collider.bounds.size.y;
+    }
 }
