@@ -12,11 +12,19 @@ public class WaveTimer : MonoBehaviour
         groundBox = FindAnyObjectByType<GroundBox>();
         groundBox.BlockAdded += OnBlockAdded;
         waveSys.OnLineUp += HandleLineUp;
+        waveSys.OnBeforeAttackStart += HandleAttackBefore;
     }
 
     private void OnDestroy() {
         groundBox.BlockAdded -= OnBlockAdded;
         waveSys.OnLineUp -= HandleLineUp;
+        waveSys.OnBeforeAttackStart -= HandleAttackBefore;
+    }
+
+    private void HandleAttackBefore(Vector2 range)
+    {
+        timeSec = waveSys.AttackDuration;
+        timerProcess = true;
     }
 
     // 선 넘으면
