@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bcd44ce911c7ff46adb267e41cf3dbf, type: 3}
-  m_Name: DefaultStatSO
+  m_Name: StoneBlockSO
   m_EditorClassIdentifier: 
   mass: 10
   health: 40

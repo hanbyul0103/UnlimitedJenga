@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bcd44ce911c7ff46adb267e41cf3dbf, type: 3}
-  m_Name: StoneStatSO
+  m_Name: WoodBlockSO
   m_EditorClassIdentifier: 
-  mass: 5
-  health: 100
-  cost: 50
+  mass: 6
+  health: 20
+  cost: 15
+  hasAbility: 0

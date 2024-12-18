@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: BlockContainerSO
   m_EditorClassIdentifier: 
   blocks:
-  - {fileID: 3718596681553363707, guid: 4d97486d715fdb1459d386cc8cc63e9e, type: 3}
+  - {fileID: 4343171510935081473, guid: 44a94932b7d8c34488e67ee735f5690f, type: 3}
+  - {fileID: 730701429085575843, guid: 2b78ff3eae1c5a347a3beaa75142680c, type: 3}
+  - {fileID: 5253986098992203491, guid: 1451b44f7f0e95345b17eb2aea2b7964, type: 3}
+  - {fileID: 1564125082607035727, guid: 31a59aaaab7c7fe45866df6f55223874, type: 3}
+  - {fileID: 1134532441506322249, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
