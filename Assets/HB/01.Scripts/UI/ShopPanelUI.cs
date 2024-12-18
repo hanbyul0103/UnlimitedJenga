@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class ShopPanelUI : MonoBehaviour, IPopup
 {
@@ -11,7 +10,6 @@ public class ShopPanelUI : MonoBehaviour, IPopup
     public List<Transform> points = new List<Transform>(4);
     //public List<System.Action> handlers = new List<System.Action>(4);
     private Dictionary<Block, System.Action> handlers = new();
-    public List<BoxCollider2D> spawnedBlockColliders = new List<BoxCollider2D>();
 
     [SerializeField] private float _originPositionX;
     [SerializeField] private float _targetPositionX;
@@ -19,10 +17,11 @@ public class ShopPanelUI : MonoBehaviour, IPopup
     private bool _isTweening;
     [SerializeField] private int _count;
 
-    private void Update()
+    public int Block { get; private set; }
+
+    private void Awake()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            OpenPopup(1);
+        Block = LayerMask.NameToLayer("Block");
     }
 
     public void OpenPopup(float _duration)
@@ -60,18 +59,6 @@ public class ShopPanelUI : MonoBehaviour, IPopup
                     HandleBlockTag(block);
                 };
                 block.OnTagEvent += handlers[block];
-
-                spawnedBlockColliders.Add(block.GetComponent<BoxCollider2D>());
-            }
-        }
-
-        for (int i = 0; i < spawnedBlockColliders.Count; i++)
-        {
-            for (int k = 0; k < spawnedBlockColliders.Count; k++)
-            {
-                if (i == k) continue;
-                Physics2D.IgnoreCollision(spawnedBlockColliders[i], spawnedBlockColliders[k]);
-                Physics2D.IgnoreCollision(spawnedBlockColliders[k], spawnedBlockColliders[i]);
             }
         }
     }
@@ -84,24 +71,31 @@ public class ShopPanelUI : MonoBehaviour, IPopup
         int idx = blocks.IndexOf(block);
         print($"{idx} / {block}");
         if (idx >= 0)
+        {
+            blocks[idx].gameObject.layer = Block;
             blocks[idx] = null;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+        {
             _count++;
 
-        if (_count == 2)
-            OpenPopup(1);
+            if (_count == 2)
+                OpenPopup(1);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
+        {
             _count--;
 
-        if (_count == 0)
-            ClosePopup(1);
+            if (_count == 0)
+                ClosePopup(1);
+        }
     }
 }

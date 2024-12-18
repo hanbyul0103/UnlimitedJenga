@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bcd44ce911c7ff46adb267e41cf3dbf, type: 3}
   m_Name: DefaultStatSO
   m_EditorClassIdentifier: 
-  mass: 2
-  health: 100
-  cost: 50
+  mass: 10
+  health: 40
+  cost: 20
   hasAbility: 0

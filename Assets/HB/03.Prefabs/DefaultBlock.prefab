@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5927901989232460464}
   - component: {fileID: 2238589096663971620}
   - component: {fileID: 3718596681553363707}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: DefaultBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,9 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blockStatSO: {fileID: 11400000, guid: 6bbca938364870a44bf8c298809dec57, type: 2}
-  _groundCheckerTransform: {fileID: 6426907175924830017}
-  _groundCheckerSize: {x: 1, y: 0.1}
-  _isInShop: 1
   _isGrounded: 0
 --- !u!1 &5579607245036945252
 GameObject:
