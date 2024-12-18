@@ -72,7 +72,6 @@ public class ShopPanelUI : MonoBehaviour, IPopup
         handlers.Remove(block);
 
         int idx = blocks.IndexOf(block);
-        print($"{idx} / {block}");
         if (idx >= 0)
         {
             blocks[idx].gameObject.layer = Block;
@@ -85,7 +84,6 @@ public class ShopPanelUI : MonoBehaviour, IPopup
         if (collision.CompareTag("Player"))
         {
             _count++;
-            print(_count);
 
             if (_count == 2)
                 OpenPopup(1);

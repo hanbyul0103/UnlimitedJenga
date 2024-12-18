@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public class DefaultBlock : Block
+public class WoodBlock : Block
 {
     public override void HandleLandEvent(bool hasAbility)
     {
-        Debug.Log($"HasAbility: {hasAbility}");
+        Debug.Log("WoodBlock");
     }
 
     public override void HandleHitEvent()

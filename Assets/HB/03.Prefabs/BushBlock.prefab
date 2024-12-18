@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1789383006834530156}
   - component: {fileID: 7062123088121335509}
   - component: {fileID: 1889486800023748455}
-  - component: {fileID: 4343171510935081473}
+  - component: {fileID: 6659731137782209182}
   m_Layer: 8
   m_Name: BushBlock
   m_TagString: Untagged
@@ -195,7 +195,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4343171510935081473
+--- !u!114 &6659731137782209182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8194763197877214223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c91141d3996eb5e4bbad60bbeebf7340, type: 3}
+  m_Script: {fileID: 11500000, guid: 71dac5d30f6fc804998e1ffab6fc57a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _blockStatSO: {fileID: 11400000, guid: 7ddc579bae06af64e9e8e7cf725e0c0b, type: 2}
