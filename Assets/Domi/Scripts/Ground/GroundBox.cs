@@ -4,6 +4,8 @@ using UnityEngine;
 public class GroundBox : MonoBehaviour
 {
     private List<GroundDetectBlock> blocks = new();
+    public event System.Action<GroundDetectBlock> BlockAdded;
+    public event System.Action<GroundDetectBlock> BlockRemoved;
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.TryGetComponent(out GroundDetectBlock block) && !block.IsGrounded) {
@@ -13,11 +15,13 @@ public class GroundBox : MonoBehaviour
 
     public void AddBlock(GroundDetectBlock block) {
         blocks.Add(block);
+        BlockAdded?.Invoke(block);
         print($"Add Blocks count: {blocks.Count}");
     }
 
     public void RemoveBlock(GroundDetectBlock block) {
         blocks.Remove(block);
+        BlockRemoved?.Invoke(block);
         print($"Remove Blocks count: {blocks.Count}");
     }
     
