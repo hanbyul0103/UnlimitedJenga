@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class WaveAttackBase : MonoBehaviour
 {
     public abstract void AttackStart(Vector2 rangeY);
-    public Vector2 GetScreenSideX(float margin) {
+    public static Vector2 GetScreenSideX(float margin) {
         float leftX = Camera.main.ViewportToWorldPoint(new Vector3(Camera.main.rect.xMin, 0, 0)).x - margin;
         float rightX = Camera.main.ViewportToWorldPoint(new Vector3(Camera.main.rect.xMax, 0, 0)).x + margin;
         return new Vector2(leftX, rightX);        

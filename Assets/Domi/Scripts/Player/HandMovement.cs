@@ -51,6 +51,7 @@ public class HandMovement : AgentMovement
     private void FixedUpdate() {
         Vector2 dir = handAgent.Control.GetMoveDirection();
         Move(dir);
+        MoveLimitX();
 
         // 방향 회전
         float plusRotate = 0;
@@ -68,5 +69,12 @@ public class HandMovement : AgentMovement
     {
         float speed = downSlow ? slowMoveSpeed : moveSpeed;
         rigid.linearVelocity = dir * speed;
+    }
+
+    private void MoveLimitX() {
+        Vector2 pos = transform.position;
+        Vector2 screenRange = WaveAttackBase.GetScreenSideX(0);
+        pos.x = Mathf.Clamp(pos.x, screenRange.x, screenRange.y - 0.5f);
+        transform.position = pos;
     }
 }
