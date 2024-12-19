@@ -19,7 +19,8 @@ public class EarthquakeAttackWave : WaveAttackBase
     
     public override void AttackStart(Vector2 rangeY)
     {
-        Block[] blocks = FindObjectsByType<Block>(FindObjectsSortMode.None);
+        GroundDetectBlock[] blocks = FindObjectsByType<GroundDetectBlock>(FindObjectsSortMode.None);
+
         shakeBlocks = blocks.Where(v => v.transform.position.y >= rangeY.x).Select(v => v.GetComponent<Rigidbody2D>()).ToArray();
 
         currentStrength = shakeStrength;
@@ -33,7 +34,7 @@ public class EarthquakeAttackWave : WaveAttackBase
 
     private void Update() {
         cam.SetNoise(currentStrength, currentStrength);
-        float x = Mathf.Cos(Time.time * 360 * Mathf.Deg2Rad * shakeSpeed) * shakeStrength;
+        float x = Mathf.Cos(Time.time * 360 * Mathf.Deg2Rad * shakeSpeed) * (currentStrength * 20);
 
         foreach (var block in shakeBlocks) {
             block.AddForce(Vector2.right * x);

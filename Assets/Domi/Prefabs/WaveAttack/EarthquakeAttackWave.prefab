@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeStrength: 5
-  shakeSpeed: 2
+  shakeSpeed: 10
