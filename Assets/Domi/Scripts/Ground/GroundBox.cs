@@ -7,6 +7,8 @@ public class GroundBox : MonoBehaviour
     public event System.Action<GroundDetectBlock> BlockAdded;
     public event System.Action<GroundDetectBlock> BlockRemoved;
 
+    [SerializeField] private StatisticsSO statistics;
+
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.TryGetComponent(out GroundDetectBlock block) && !block.IsGrounded) {
             block.GroundToutch(this);
@@ -35,6 +37,16 @@ public class GroundBox : MonoBehaviour
         }
 
         return maxHeight;
+    }
+
+    private void Update() {
+        if (blocks.Count == 0) return;
+        
+        // 최대 높이 기록
+        float maxHeight = GetMaxHeight();
+        if (statistics.maxHeight < maxHeight) {
+            statistics.maxHeight = maxHeight;
+        }
     }
     
     // 최대 높이 표시

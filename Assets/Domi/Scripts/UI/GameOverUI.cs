@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] private WaveSystemSO waveSys;
+    [SerializeField] private StatisticsSO statistics;
 
     [SerializeField] private RectTransform boxRect;
     [SerializeField] private CanvasGroup mainGroup;
@@ -33,7 +34,6 @@ public class GameOverUI : MonoBehaviour
     {
         Vector2 screenSize = (transform.root as RectTransform).rect.size;
 
-        Time.timeScale = 0; // 시간 멈춤
         waveText.color = heightText.color = fallBlockText.color = new Color(0, 0, 0, 0);
         anyKeyText.gameObject.SetActive(false);
         mainGroup.alpha = 0;
@@ -43,6 +43,7 @@ public class GameOverUI : MonoBehaviour
         sequence = DOTween.Sequence();
 
         sequence.AppendInterval(1f); // 테스트
+        sequence.AppendCallback(() => Time.timeScale = 0); // 시간 멈춤
         
         // 화면 나오는 애님
         sequence.SetUpdate(true);
@@ -52,8 +53,8 @@ public class GameOverUI : MonoBehaviour
         sequence.AppendInterval(0.5f);
 
         int maxWave = waveSys.GetWave();
-        int maxHeight = 1000;
-        int fallBlock = 500;
+        float maxHeight = statistics.maxHeight;
+        int fallBlock = statistics.fallBlock;
 
         // 최고 웨이브
         sequence.AppendCallback(() => waveText.color = Color.black);

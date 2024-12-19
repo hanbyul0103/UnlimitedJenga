@@ -6,6 +6,6 @@ public class GameStartAction : MonoBehaviour
 
 // 시작하믄
     private void Start() {
-        waveSys.SetWave(1); // 1부터 시작
+        waveSys.GoGame(); // 1부터 시작
     }
 }

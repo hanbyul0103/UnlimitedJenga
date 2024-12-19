@@ -12,6 +12,7 @@ public class WaveSystemSO : ScriptableObject
     [field: SerializeField] public float AttackDuration = 30; // 자연재해 지속 시간
     [SerializeField] private float deadLineSize = 0.75f;
     public int LineUpDuration { get; private set; } = 60 * 10; // 라인 까지 쌓아야 하는 시간
+    [field:SerializeField] public bool GameStart { get; private set; } = false;
     
     public event Action OnChangeWaveCount;
     public event Action OnLineUp; // 라인보다 더 높이 쌓아짐
@@ -22,6 +23,24 @@ public class WaveSystemSO : ScriptableObject
     private void OnEnable() {
         IsAttack = false;
         AttackStartHeight = 0;
+        
+        OnGameOver += HandleGameOver;
+    }
+
+    private void OnDisable() {
+        OnGameOver -= HandleGameOver;
+    }
+
+    private void HandleGameOver()
+    {
+        GameStart = false;
+    }
+
+    
+
+    public void GoGame() {
+        GameStart = true;
+        SetWave(1);
     }
 
     public void SetWave(int value) {
@@ -35,6 +54,8 @@ public class WaveSystemSO : ScriptableObject
     public int GetWave() => waveCount;
 
     public void OnTimerEnd() {
+        if (!GameStart) return;
+
         if (IsAttack) { // 공격 끗
             IsAttack = false;
             OnAttackFinish?.Invoke();
@@ -50,7 +71,7 @@ public class WaveSystemSO : ScriptableObject
     public void HandleLineUp() {
         OnLineUp?.Invoke();
 
-        if (IsAttack) return;
+        if (IsAttack || !GameStart) return;
         IsAttack = true; // 선 넘었으니 자연재해 시작
         OnBeforeAttackStart?.Invoke(new Vector2(lastAttackStartHeight, AttackStartHeight));
 

@@ -4336,11 +4336,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5947881613130801704, guid: e59fa543cf790b046922afe0141c8bb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.39
+      value: -10.02
       objectReference: {fileID: 0}
     - target: {fileID: 5947881613130801704, guid: e59fa543cf790b046922afe0141c8bb2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.47
+      value: 15.78
       objectReference: {fileID: 0}
     - target: {fileID: 5947881613130801704, guid: e59fa543cf790b046922afe0141c8bb2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4487,6 +4487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveSys: {fileID: 11400000, guid: 68240ebeb61bcae48bb4ccc4a9cc78b5, type: 2}
+  statistics: {fileID: 11400000, guid: de5af1d7aef26cc4d8d77c80b3e9eaab, type: 2}
   boxRect: {fileID: 1248428164}
   mainGroup: {fileID: 1060241635}
   waveText: {fileID: 12146691}
@@ -4578,11 +4579,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1101498264423312232, guid: 61b7ba57440ade042a8df040b9c108d7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.59
+      value: -11.82
       objectReference: {fileID: 0}
     - target: {fileID: 1101498264423312232, guid: 61b7ba57440ade042a8df040b9c108d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.43
+      value: 15.74
       objectReference: {fileID: 0}
     - target: {fileID: 1101498264423312232, guid: 61b7ba57440ade042a8df040b9c108d7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8103,6 +8104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd542df9e7b58a4a8570b8e145cae11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statistics: {fileID: 11400000, guid: de5af1d7aef26cc4d8d77c80b3e9eaab, type: 2}
 --- !u!61 &1819237125
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9183,6 +9185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f6798359e82754c960eb99790a0dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statistics: {fileID: 11400000, guid: de5af1d7aef26cc4d8d77c80b3e9eaab, type: 2}
 --- !u!1001 &2132892011
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class GoalLine : MonoBehaviour
     }
 
     private void Update() {
-        if (waveSys.IsAttack) return;
+        if (waveSys.IsAttack || !waveSys.GameStart) return;
 
         float height = groundBox.GetMaxHeight();
         if (height > waveSys.AttackStartHeight) {

@@ -73,6 +73,9 @@ public class GroundDetectBlock : MonoBehaviour, IBlockOutHandler
     {
         if (IsGrounded)
             GroundExit();
+
+        // 곧 삭제됨
+        Destroy(gameObject, 3f);
     }
     
     private void Update() {
