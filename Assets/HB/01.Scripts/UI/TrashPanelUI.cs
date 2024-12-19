@@ -22,6 +22,7 @@ public class TrashPanelUI : MonoBehaviour, IPopup
             {
                 _isTweening = false;
                 _canUI.canDestroy = true;
+                Debug.Log("asdf");
             });
     }
 
