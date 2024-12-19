@@ -17,6 +17,7 @@ public class GameOverUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI fallBlockText;
     [SerializeField] private TextMeshProUGUI anyKeyText;
     [SerializeField] Image rankImage;
+    [SerializeField] Sprite[] rankSprites;
 
     private Sequence sequence;
     private Sequence anyKeySequence;
@@ -69,6 +70,10 @@ public class GameOverUI : MonoBehaviour
         sequence.Append(NumberAnim(fallBlock, 1f, (v) => fallBlockText.text = $"{v}블럭"));
 
         // 랭크
+        // 점수 계산
+        int rankScore = 100 * maxWave - 10 * fallBlock;
+        rankImage.sprite = GetRankSprite(rankScore);
+
         sequence.AppendInterval(0.5f);
         sequence.Append(rankImage.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack));
 
@@ -83,5 +88,22 @@ public class GameOverUI : MonoBehaviour
         return DOTween.To(() => 0f, x => {
             cb?.Invoke((int)x);
         }, number, duration).SetEase(Ease.Linear);
+    }
+    
+    private Sprite GetRankSprite(int score) {
+        int idx;
+        if (score > 990) {
+            idx = 0;
+        } else if (score > 850) {
+            idx = 1;
+        } else if (score > 700) {
+            idx = 2;
+        } else if (score > 450) {
+            idx = 3;
+        } else if (score > 200) {
+            idx = 4;
+        } else idx = 5;
+
+        return rankSprites[idx];
     }
 }

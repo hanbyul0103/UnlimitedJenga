@@ -608,7 +608,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -208.44464, y: -326.44464}
-  m_SizeDelta: {x: 170.8893, y: 170.8893}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6644648584717319831
 CanvasRenderer:
@@ -1306,6 +1306,13 @@ MonoBehaviour:
   fallBlockText: {fileID: 9058055494419497907}
   anyKeyText: {fileID: 7145585237332586436}
   rankImage: {fileID: 2186309931081429133}
+  rankSprites:
+  - {fileID: 21300000, guid: d054e2e72b29b134aa4042538834254b, type: 3}
+  - {fileID: 21300000, guid: 281839eedd4472c40b26f9fd9f503df9, type: 3}
+  - {fileID: 21300000, guid: 58b7de5c0150d7b4897cd0a0b634bcac, type: 3}
+  - {fileID: 21300000, guid: a0a6563a723cccf4d8694603835770d7, type: 3}
+  - {fileID: 21300000, guid: 77358d0f7cafe6647b55a14a48b1a52d, type: 3}
+  - {fileID: 21300000, guid: 7e87337d8a3139340b8cae4e32233da8, type: 3}
 --- !u!1 &5526880425507292041
 GameObject:
   m_ObjectHideFlags: 0
