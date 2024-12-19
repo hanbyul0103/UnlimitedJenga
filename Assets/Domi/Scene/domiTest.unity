@@ -6563,6 +6563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InfiniteBackground
       objectReference: {fileID: 0}
+    - target: {fileID: 2994458839824294072, guid: d74c90e5a4cb44d449a2ea1e44c3fdc5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9184367396300430328, guid: d74c90e5a4cb44d449a2ea1e44c3fdc5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

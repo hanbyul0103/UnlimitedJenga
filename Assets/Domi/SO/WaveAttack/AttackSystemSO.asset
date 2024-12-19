@@ -15,3 +15,4 @@ MonoBehaviour:
   waveSys: {fileID: 11400000, guid: 68240ebeb61bcae48bb4ccc4a9cc78b5, type: 2}
   attackList:
   - {fileID: 11400000, guid: 760e6643daf145d4fa036b0f8aee6f2a, type: 2}
+  - {fileID: 11400000, guid: b6ff07135423d454abd048b35d8f005c, type: 2}
