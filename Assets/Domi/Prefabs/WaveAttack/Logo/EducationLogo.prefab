@@ -141,6 +141,8 @@ MonoBehaviour:
   speed: 300
   damage: 5
   lifeTime: 5
+  activeSound: 0
+  throwAudioClips: []
 --- !u!50 &4024035368005208858
 Rigidbody2D:
   serializedVersion: 5
