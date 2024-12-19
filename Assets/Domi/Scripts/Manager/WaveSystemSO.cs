@@ -23,6 +23,10 @@ public class WaveSystemSO : ScriptableObject
     private void OnEnable() {
         IsAttack = false;
         AttackStartHeight = 0;
+        waveCount = 0;
+        lastAttackStartHeight = 0;
+        DeadHeight = 0;
+        GameStart = false;
         
         OnGameOver += HandleGameOver;
     }
