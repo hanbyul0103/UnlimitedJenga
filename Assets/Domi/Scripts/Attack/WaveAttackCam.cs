@@ -7,12 +7,14 @@ public class WaveAttackCam : MonoBehaviour
     [SerializeField] private WaveSystemSO waveSystem;
     [SerializeField] private float padding = 2f;
     private CinemachineCamera cam;
+    private CinemachineBasicMultiChannelPerlin noise;
     
     private void Awake() {
         waveSystem.OnBeforeAttackStart += HandleAttackStart;
         waveSystem.OnAttackFinish += HandleAttackFinish;
 
         cam = GetComponent<CinemachineCamera>();
+        noise = GetComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
     private void OnDestroy() {
@@ -36,5 +38,11 @@ public class WaveAttackCam : MonoBehaviour
     private void HandleAttackFinish()
     {
         cam.Priority = -1;
+    }
+
+    public void SetNoise(float amplitude, float frequency)
+    {
+        noise.AmplitudeGain = amplitude;
+        noise.FrequencyGain = frequency;
     }
 }
