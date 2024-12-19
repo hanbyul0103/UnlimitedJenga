@@ -20,6 +20,11 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        PlayBGM("BGM");
+    }
+
     public void PlayBGM(string name)
     {
         Sound sound = Array.Find(bgmSounds, x => x.name == name);
