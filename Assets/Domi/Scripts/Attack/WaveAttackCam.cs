@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaveAttackCam : MonoBehaviour
 {
     [SerializeField] private WaveSystemSO waveSystem;
+    [SerializeField] private float padding = 2f;
     private CinemachineCamera cam;
     
     private void Awake() {
@@ -27,7 +28,7 @@ public class WaveAttackCam : MonoBehaviour
 
         float diff = Mathf.Abs(range.y - range.x);
         print($"{range} cam.Lens.OrthographicSize = {diff} / 2f");
-        cam.Lens.OrthographicSize = (diff * .5f) + 1f;
+        cam.Lens.OrthographicSize = (diff * .5f) + padding;
 
         cam.Priority = 1;
     }

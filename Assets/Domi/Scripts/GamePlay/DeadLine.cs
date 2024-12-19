@@ -22,7 +22,8 @@ public class DeadLine : MonoBehaviour
 
     private void HandleAttackStart(Vector2 vector)
     {
-        transform.position = new Vector3(0, waveSys.DeadHeight, 0);
+        Vector3 pos = transform.position;
+        transform.position = new Vector3(pos.x, waveSys.DeadHeight, pos.z);
         heightT.text = $"{waveSys.DeadHeight}m";
         SetShow(true);
     }

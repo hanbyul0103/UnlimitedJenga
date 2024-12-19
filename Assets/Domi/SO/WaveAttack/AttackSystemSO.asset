@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveSys: {fileID: 11400000, guid: 68240ebeb61bcae48bb4ccc4a9cc78b5, type: 2}
   attackList:
-  - {fileID: 11400000, guid: b9546fc13550f6340b332e0e464ba04e, type: 2}
+  - {fileID: 11400000, guid: 760e6643daf145d4fa036b0f8aee6f2a, type: 2}

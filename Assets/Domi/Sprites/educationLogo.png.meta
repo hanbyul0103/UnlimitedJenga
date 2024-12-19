@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 791fdbfb52a196f46a0c7f047b8429ac
+guid: 6a9e3ac3739be454bbee3e57392d5095
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6458393038295425808
-    second: goalUIBox_0
+      213: 4302300546010294322
+    second: educationLogo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: goalUIBox_0
+      name: educationLogo_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 748
-        height: 127
+        x: 4
+        y: 7
+        width: 592
+        height: 592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0fc9b8cefbd2f56a0800000000000000
-      internalID: -6458393038295425808
+      spriteID: 238a9e15d87d4bb30800000000000000
+      internalID: 4302300546010294322
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      goalUIBox_0: -6458393038295425808
+      educationLogo_0: 4302300546010294322
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

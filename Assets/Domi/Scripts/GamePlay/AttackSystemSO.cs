@@ -30,7 +30,7 @@ public class AttackSystemSO : ScriptableObject
         AttackDataSO attackData = GetRandomAttack();
 
         currentAttack = Instantiate(attackData.attackPrefab);
-        // currentAttack.AttackStart()
+        currentAttack.AttackStart(range);
 
         OnAfterAttackStart?.Invoke(attackData);
     }
