@@ -5,6 +5,7 @@ public class WoodBlock : Block
 {
     public override void HandleLandEvent(bool hasAbility)
     {
+        base.HandleLandEvent(hasAbility);
         Debug.Log("WoodBlock");
     }
 

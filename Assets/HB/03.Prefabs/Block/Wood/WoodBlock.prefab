@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1932711724613236352}
   m_Layer: 8
   m_Name: WoodBlock
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blockStatSO: {fileID: 11400000, guid: 6bbca938364870a44bf8c298809dec57, type: 2}
-  _isGrounded: 0
 --- !u!114 &1932711724613236352
 MonoBehaviour:
   m_ObjectHideFlags: 0

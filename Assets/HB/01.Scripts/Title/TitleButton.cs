@@ -42,6 +42,7 @@ public abstract class TitleButton : MonoBehaviour
             {
                 _startTime = Time.time;
                 _currentCoroutine = StartCoroutine(Timer());
+                SoundManager.Instance.PlaySFX("ButtonCharging");
             }
         }
     }
@@ -55,6 +56,7 @@ public abstract class TitleButton : MonoBehaviour
             if (_count < 2 && _currentCoroutine != null)
             {
                 StopCoroutine(_currentCoroutine);
+                SoundManager.Instance.StopSFX();
                 _currentCoroutine = null;
             }
         }

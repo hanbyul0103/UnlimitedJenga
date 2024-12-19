@@ -2,18 +2,17 @@ using UnityEngine;
 
 public class BushBlock : Block
 {
-    public override void HandleDeadEvent()
+    public override void HandleLandEvent(bool hasAbility)
     {
+        base.HandleLandEvent(hasAbility);
         Debug.Log("BushBlock");
     }
 
     public override void HandleHitEvent()
     {
-        throw new System.NotImplementedException();
     }
 
-    public override void HandleLandEvent(bool hasAbility)
+    public override void HandleDeadEvent()
     {
-        throw new System.NotImplementedException();
     }
 }
