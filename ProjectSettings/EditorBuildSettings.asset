@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/HB/00.Scene/PressAnyKeyScene.unity
+    path: Assets/00.Scenes/PressAnyKeyScene.unity
     guid: 78e70571b555e5f4fa8303738222e965
   - enabled: 1
-    path: Assets/HB/00.Scene/TitleScene.unity
+    path: Assets/00.Scenes/TitleScene.unity
     guid: cd66ad003eef23242b3b37da4cbd9d3e
   - enabled: 1
-    path: Assets/HB/00.Scene/HBScene.unity
+    path: Assets/00.Scenes/InGameScene.unity
     guid: ef7519500fac3f74ba3399bf6a954ff6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

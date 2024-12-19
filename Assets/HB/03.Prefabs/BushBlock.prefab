@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7062123088121335509}
   - component: {fileID: 1889486800023748455}
   - component: {fileID: 6659731137782209182}
+  - component: {fileID: -6498029111132692487}
   m_Layer: 8
   m_Name: BushBlock
   m_TagString: Untagged
@@ -209,3 +210,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _blockStatSO: {fileID: 11400000, guid: 7ddc579bae06af64e9e8e7cf725e0c0b, type: 2}
   _isGrounded: 0
+--- !u!114 &-6498029111132692487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8194763197877214223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96361289ba7ccf54eb0397b2c8e29ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockLayer:
+    serializedVersion: 2
+    m_Bits: 192
+  allowDistance: 0.1

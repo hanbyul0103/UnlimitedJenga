@@ -43,7 +43,7 @@ public abstract class TitleButton : MonoBehaviour
         {
             if (_startTime + _coolTime <= Time.time)
             {
-                SceneManager.LoadScene("HBScene");
+                SceneManager.LoadScene(sceneName);
                 yield break;
             }
 
