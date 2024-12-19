@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1034706158503423426}
   m_Layer: 8
   m_Name: MergeBlock
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blockStatSO: {fileID: 11400000, guid: 1934c863e75c70249a9f8dfff05db70f, type: 2}
-  _isGrounded: 0
 --- !u!114 &1034706158503423426
 MonoBehaviour:
   m_ObjectHideFlags: 0

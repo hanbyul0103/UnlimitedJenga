@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public abstract class Block : MonoBehaviour
@@ -17,8 +18,6 @@ public abstract class Block : MonoBehaviour
     public BlockStatSO _blockStatSO;
 
     [Header("Info")]
-    [SerializeField] private bool _isGrounded = false;
-    public bool IsGrounded => _isGrounded;
     private int _count;
 
     private void Awake()
@@ -41,7 +40,10 @@ public abstract class Block : MonoBehaviour
         _collider.isTrigger = true;
     }
 
-    public abstract void HandleLandEvent(bool hasAbility);
+    public virtual void HandleLandEvent(bool hasAbility)
+    {
+        SoundManager.Instance.PlaySFX("BlockFall");
+    }
     public abstract void HandleHitEvent();
     public abstract void HandleDeadEvent();
 
@@ -52,6 +54,14 @@ public abstract class Block : MonoBehaviour
         _rigidbody.gravityScale = 8;
         _collider.isTrigger = false;
         transform.parent = null;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Block"))
+        {
+            SoundManager.Instance.PlaySFX("BlockFall");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
