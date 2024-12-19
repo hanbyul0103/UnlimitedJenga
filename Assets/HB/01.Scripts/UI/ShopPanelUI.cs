@@ -30,6 +30,8 @@ public class ShopPanelUI : MonoBehaviour, IPopup
     {
         if (_isTweening) transform.DOKill();
 
+        SoundManager.Instance.PlaySFX("PanelOpen");
+
         _isTweening = true;
 
         SettingBlock();
@@ -41,6 +43,8 @@ public class ShopPanelUI : MonoBehaviour, IPopup
     public void ClosePopup(float _duration)
     {
         if (_isTweening) transform.DOKill();
+
+        SoundManager.Instance.PlaySFX("PanelClose");
 
         _isTweening = true;
         transform.DOMoveX(_originPositionX, _duration)
@@ -78,6 +82,8 @@ public class ShopPanelUI : MonoBehaviour, IPopup
             blocks[idx].gameObject.layer = Block;
             blocks[idx] = null;
         }
+
+        SoundManager.Instance.PlaySFX("BuyBlock");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -40,6 +40,8 @@ public class SceneTransistor : MonoBehaviour
 
             Sequence seq = DOTween.Sequence();
 
+            seq.AppendCallback(() => SoundManager.Instance.PlaySFX("PressAnyKey"));
+
             for (int i = 0; i < _blockPos.Count; i++)
             {
                 seq.Insert(Random.Range(0.1f, .7f), _blockPos[i].DOMove(_originPos[i].position, 0.5f));

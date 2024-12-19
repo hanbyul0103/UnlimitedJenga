@@ -15,6 +15,8 @@ public class TrashPanelUI : MonoBehaviour, IPopup
     {
         if (_isTweening) transform.DOKill();
 
+        SoundManager.Instance.PlaySFX("PanelOpen");
+
         _isTweening = true;
 
         transform.DOMoveX(_targetPositionX, _duration)
@@ -29,6 +31,8 @@ public class TrashPanelUI : MonoBehaviour, IPopup
     public void ClosePopup(float _duration)
     {
         if (_isTweening) transform.DOKill();
+
+        SoundManager.Instance.PlaySFX("PanelClose");
 
         _isTweening = true;
         _canUI.canDestroy = false;
