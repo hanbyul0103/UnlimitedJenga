@@ -10,11 +10,16 @@ public class EarthquakeAttackWave : WaveAttackBase
     [SerializeField] private float shakeSpeed = 2f;
     private WaveAttackCam cam;
     private float currentStrength = 0.0f;
+    [SerializeField] private AudioClip effectSound;
+    private AudioSource audioSource;
+
 
     Rigidbody2D[] shakeBlocks;
 
     private void Awake() {
         cam = FindAnyObjectByType<WaveAttackCam>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = effectSound;
     }
     
     public override void AttackStart(Vector2 rangeY)
@@ -26,10 +31,21 @@ public class EarthquakeAttackWave : WaveAttackBase
         currentStrength = shakeStrength;
         StartCoroutine(EarthquakeEffect());
     }
+
+    private void OnDestroy() {
+        if (audioSource.isPlaying)
+            audioSource.Stop();
+    }
     
     IEnumerator EarthquakeEffect() {
+        audioSource.time = 0;
+        audioSource.volume = 1;
+        audioSource.Play();
+
         yield return new WaitForSeconds(18f);
+
         DOTween.To(() => currentStrength, x => currentStrength = x, 0, 2f);
+        audioSource.DOFade(0, 2f);
     }
 
     private void Update() {

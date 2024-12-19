@@ -1,4 +1,5 @@
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 
 public class WaveAttackWinde : WaveAttackBase
@@ -6,10 +7,17 @@ public class WaveAttackWinde : WaveAttackBase
     [SerializeField] private ParticleSystem windEffect;
     [SerializeField] private LayerMask blockLayer;
     [SerializeField] private float pushValue = 50f;
+    [SerializeField] private AudioClip windSound;
 
     ParticleSystem particle;
     Vector2 rangeY;
     private Vector2 direction;
+    private AudioSource audioSource;
+
+    private void Awake() {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = windSound;
+    }
 
     public override void AttackStart(Vector2 val)
     {
@@ -21,6 +29,8 @@ public class WaveAttackWinde : WaveAttackBase
     private void OnDestroy() {
         if (particle)
             Destroy(particle.gameObject);
+        if (audioSource.isPlaying)
+            audioSource.Stop();
     }
 
     IEnumerator WineEffect() {
@@ -32,12 +42,18 @@ public class WaveAttackWinde : WaveAttackBase
             SetRandomDirectionAndPos();
             particle.Play();
 
+            audioSource.time = 0;
+            audioSource.volume = 1;
+            audioSource.Play();
+
             timer = 7f; // 7초동안
             while (timer > 0) {
                 timer -= Time.deltaTime;
                 BlocksAddForce();
                 yield return null;
             }
+
+            audioSource.DOFade(0, 0.5f);
 
             particle.Stop();
             particle.Clear();
