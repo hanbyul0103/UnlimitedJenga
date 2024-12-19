@@ -48,4 +48,5 @@ MonoBehaviour:
   - {fileID: 9101674179280002664, guid: e3f34fefc2d2b3b44947fc326c6665f5, type: 3}
   - {fileID: 2590188333578940411, guid: 4992410dd3290e7488e3f2aef2fbe9fd, type: 3}
   xMargin: 5
+  yMin: 2.5
   spawnDelayRange: {x: 3, y: 8}

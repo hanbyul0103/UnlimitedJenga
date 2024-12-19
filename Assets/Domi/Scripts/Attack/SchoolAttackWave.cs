@@ -4,6 +4,7 @@ public class SchoolAttackWave : WaveAttackBase
 {
     [SerializeField] private ShcoolLogoEntity[] prefabs;
     [SerializeField] private float xMargin = 5f;
+    [SerializeField] private float yMin = 2f;
     [SerializeField] private Vector2 spawnDelayRange = new Vector2(1f, 5f);
 
     private Vector2 rangeX;
@@ -40,6 +41,7 @@ public class SchoolAttackWave : WaveAttackBase
 
         bool left = Random.Range(0, 2) == 0;
         float height = Random.Range(rangeY.x, rangeY.y);
+        height = Mathf.Max(height, yMin);
         print($"{rangeY} / {height}");
 
         Vector3 pos = new Vector3(left ? rangeX.x : rangeX.y, height, 0);
