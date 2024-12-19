@@ -11,7 +11,7 @@ public abstract class Block : MonoBehaviour
 
     [Header("Reference")]
     private Rigidbody2D _rigidbody;
-    private BoxCollider2D _collider;
+    private Collider2D _collider;
 
     [Header("Setting")]
     public BlockStatSO _blockStatSO;
@@ -24,7 +24,7 @@ public abstract class Block : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _collider = GetComponent<BoxCollider2D>();
+        _collider = GetComponent<Collider2D>();
 
         OnLandEvent += HandleLandEvent;
         OnHitEvent += HandleHitEvent;
