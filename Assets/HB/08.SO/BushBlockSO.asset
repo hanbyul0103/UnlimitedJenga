@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bcd44ce911c7ff46adb267e41cf3dbf, type: 3}
   m_Name: BushBlockSO
   m_EditorClassIdentifier: 
-  mass: 3
+  mass: 5
   health: 10
   cost: 10
   hasAbility: 0

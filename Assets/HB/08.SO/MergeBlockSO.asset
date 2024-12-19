@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bcd44ce911c7ff46adb267e41cf3dbf, type: 3}
   m_Name: MergeBlockSO
   m_EditorClassIdentifier: 
-  mass: 8
+  mass: 15
   health: 10
   cost: 50
   hasAbility: 1

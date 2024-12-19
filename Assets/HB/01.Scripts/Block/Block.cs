@@ -11,6 +11,7 @@ public abstract class Block : MonoBehaviour
 
     [Header("Reference")]
     private Rigidbody2D _rigidbody;
+    private BoxCollider2D _collider;
 
     [Header("Setting")]
     public BlockStatSO _blockStatSO;
@@ -18,10 +19,12 @@ public abstract class Block : MonoBehaviour
     [Header("Info")]
     [SerializeField] private bool _isGrounded = false;
     public bool IsGrounded => _isGrounded;
+    private int _count;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _collider = GetComponent<BoxCollider2D>();
 
         OnLandEvent += HandleLandEvent;
         OnHitEvent += HandleHitEvent;
@@ -34,6 +37,7 @@ public abstract class Block : MonoBehaviour
     {
         _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         _rigidbody.gravityScale = 0;
+        _collider.isTrigger = true;
     }
 
     public abstract void HandleLandEvent(bool hasAbility);
@@ -44,14 +48,28 @@ public abstract class Block : MonoBehaviour
     {
         _rigidbody.constraints = RigidbodyConstraints2D.None;
         _rigidbody.gravityScale = _blockStatSO.mass;
+        _collider.isTrigger = false;
         transform.parent = null;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            OnTagEvent?.Invoke();
+            _count++;
+            print(_count);
+            print(collision.gameObject.name);
+
+            if (_count == 2)
+                OnTagEvent?.Invoke();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            _count--;
         }
     }
 
