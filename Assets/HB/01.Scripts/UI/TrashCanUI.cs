@@ -15,7 +15,10 @@ public class TrashCanUI : MonoBehaviour
         if (collision.gameObject.layer == Block)
         {
             if (canDestroy)
+            {
+                SoundManager.Instance.PlaySFX("MainBlockCome");
                 Destroy(collision.gameObject);
+            }
         }
     }
 }

@@ -72,7 +72,7 @@ public class HandMovement : AgentMovement
     }
 
     private void MoveLimitX() {
-        Vector2 pos = transform.position;
+        Vector3 pos = transform.position;
         Vector2 screenRange = WaveAttackBase.GetScreenSideX(0);
         pos.x = Mathf.Clamp(pos.x, screenRange.x, screenRange.y - 0.5f);
         transform.position = pos;
