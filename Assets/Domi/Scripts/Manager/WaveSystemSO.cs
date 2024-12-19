@@ -17,6 +17,7 @@ public class WaveSystemSO : ScriptableObject
     public event Action OnLineUp; // 라인보다 더 높이 쌓아짐
     public event Action<Vector2> OnBeforeAttackStart;
     public event Action OnAttackFinish;
+    public event Action OnGameOver;
 
     private void OnEnable() {
         IsAttack = false;
@@ -41,7 +42,7 @@ public class WaveSystemSO : ScriptableObject
             // 다음 웨이브 ㄱㄱ
             SetWave(waveCount + 1);
         } else { // 다음 웨이브 선 까지 채우지 못하고 시간 오버!!!
-            
+            OnGameOver?.Invoke();
         }
         Debug.Log("타이머 끝");
     }
@@ -58,6 +59,7 @@ public class WaveSystemSO : ScriptableObject
 
     public void HandleDeadLineLow() {
         IsAttack = false;
+        OnGameOver?.Invoke();
         Debug.Log("데드라인 아래 있음 (끝)");
     }
 }
