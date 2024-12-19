@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9105596319203905214
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 456182381584374733, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_Name
+      value: 2X2Shield Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775845435179363375, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775845435179363375, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775845435179363375, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775845435179363375, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775845435179363375, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775845435179363375, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775845435179363375, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775845435179363375, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775845435179363375, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775845435179363375, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668671950990740802, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2389193319765324094, guid: d8faad1956a1bae44971034c94d8712a, type: 3}
+    m_RemovedComponents:
+    - {fileID: 8177026894962268343, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 456182381584374733, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1044660457365731018}
+  m_SourcePrefab: {fileID: 100100000, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+--- !u!1 &8649511553808209267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 456182381584374733, guid: bae48fc8c24528c44ac29a71bdab226d, type: 3}
+  m_PrefabInstance: {fileID: 9105596319203905214}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1044660457365731018
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8649511553808209267}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.10332028, y: 0}
+  m_Radius: 3.4077635

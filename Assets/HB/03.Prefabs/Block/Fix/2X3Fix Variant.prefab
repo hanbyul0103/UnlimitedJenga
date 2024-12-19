@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2112562218518180018
+--- !u!1001 &5022725405636836585
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -50,8 +50,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5176105761648776745, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
       propertyPath: m_Name
-      value: 1X2Fix Variant
+      value: 2X3Fix Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8440732765776392866, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
+      propertyPath: m_Size.x
+      value: 8.464895
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440732765776392866, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
+      propertyPath: m_Size.y
+      value: 5.8934784
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440732765776392866, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.065481424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440732765776392866, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0643878
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440732765776392866, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 9.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440732765776392866, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942288595976452461, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3431191199172144184, guid: c0034b6c78a30124ebf79187ae42445e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -36,6 +36,7 @@ public abstract class Block : MonoBehaviour
     private void Start()
     {
         _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _rigidbody.mass = 0;
         _rigidbody.gravityScale = 0;
         _collider.isTrigger = true;
     }
@@ -47,7 +48,8 @@ public abstract class Block : MonoBehaviour
     public void HandleTagEvent()
     {
         _rigidbody.constraints = RigidbodyConstraints2D.None;
-        _rigidbody.gravityScale = _blockStatSO.mass;
+        _rigidbody.mass = _blockStatSO.mass;
+        _rigidbody.gravityScale = 8;
         _collider.isTrigger = false;
         transform.parent = null;
     }
