@@ -29,8 +29,10 @@ public class GroundDetectBlock : MonoBehaviour, IBlockOutHandler
     }
     
     public void GroundExit() {
-        groundBox.RemoveBlock(this);
-        groundBox = null;
+        if (groundBox != null) {
+            groundBox.RemoveBlock(this);
+            groundBox = null;
+        }
         OnChangeGround?.Invoke(null);
     }
 
@@ -79,6 +81,11 @@ public class GroundDetectBlock : MonoBehaviour, IBlockOutHandler
         // 곧 삭제됨
         willRemove = true;
         Destroy(gameObject, 3f);
+    }
+
+    private void OnDestroy() {
+        if (IsGrounded)
+            GroundExit();
     }
     
     private void Update() {
