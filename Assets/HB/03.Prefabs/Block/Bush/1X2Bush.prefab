@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6659731137782209182, guid: 44a94932b7d8c34488e67ee735f5690f, type: 3}
+      propertyPath: _groundCheckerSize.x
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659731137782209182, guid: 44a94932b7d8c34488e67ee735f5690f, type: 3}
+      propertyPath: _groundCheckerSize.y
+      value: 0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 7062123088121335509, guid: 44a94932b7d8c34488e67ee735f5690f, type: 3}
       propertyPath: m_Size.x
       value: 5.682788
@@ -87,6 +95,10 @@ PrefabInstance:
     - target: {fileID: 7062123088121335509, guid: 44a94932b7d8c34488e67ee735f5690f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 3.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7209988351445592288, guid: 44a94932b7d8c34488e67ee735f5690f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.57
       objectReference: {fileID: 0}
     - target: {fileID: 8194763197877214223, guid: 44a94932b7d8c34488e67ee735f5690f, type: 3}
       propertyPath: m_Name

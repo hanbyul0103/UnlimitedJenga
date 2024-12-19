@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 772495027240215176, guid: b0b0fabe1c22ae34eade2df39d770d18, type: 3}
+      propertyPath: _groundCheckerSize.x
+      value: 1.27
+      objectReference: {fileID: 0}
     - target: {fileID: 2841155332437124121, guid: b0b0fabe1c22ae34eade2df39d770d18, type: 3}
       propertyPath: m_Name
       value: 1X3Bush
