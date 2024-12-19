@@ -65,14 +65,18 @@ public class GameOverUI : MonoBehaviour
         // 최고 웨이브
         sequence.AppendCallback(() => waveText.color = Color.black);
         sequence.Append(NumberAnim(waveSys.GetWave(), 1f, (v) => waveText.text = v.ToString()));
+        sequence.JoinCallback(() => SoundManager.Instance?.PlaySFX("Ding1"));
 
         // 높이
         sequence.AppendCallback(() => heightText.color = Color.black);
         sequence.Append(NumberAnim(maxHeight, 1f, (v) => heightText.text = $"{v}m"));
+        sequence.JoinCallback(() => SoundManager.Instance?.PlaySFX("Ding2"));
 
         // 떨어진거 블럭
         sequence.AppendCallback(() => fallBlockText.color = Color.black);
         sequence.Append(NumberAnim(fallBlock, 1f, (v) => fallBlockText.text = $"{v}블럭"));
+        sequence.JoinCallback(() => SoundManager.Instance?.PlaySFX("Ding3"));
+        sequence.AppendCallback(() => SoundManager.Instance?.PlaySFX("Ding4"));
 
         // 랭크
         // 점수 계산
@@ -80,7 +84,9 @@ public class GameOverUI : MonoBehaviour
         rankImage.sprite = GetRankSprite(rankScore);
 
         sequence.AppendInterval(0.5f);
+
         sequence.Append(rankImage.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack));
+        sequence.JoinCallback(() => SoundManager.Instance?.PlaySFX("Rank"));
 
         sequence.AppendInterval(0.5f);
         sequence.AppendCallback(() =>

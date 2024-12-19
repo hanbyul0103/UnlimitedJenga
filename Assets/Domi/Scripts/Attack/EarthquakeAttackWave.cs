@@ -37,7 +37,8 @@ public class EarthquakeAttackWave : WaveAttackBase
         float x = Mathf.Cos(Time.time * 360 * Mathf.Deg2Rad * shakeSpeed) * (currentStrength * 20);
 
         foreach (var block in shakeBlocks) {
-            block.AddForce(Vector2.right * x);
+            if (block != null)
+                block.AddForce(Vector2.right * x);
         }
     }
 }
