@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public abstract class TitleButton : MonoBehaviour
 {
-    protected int _count;
-    [SerializeField] protected float _coolTime;
-    protected float _startTime;
+    private int _count;
+    private float _coolTime = 3;
+    private float _startTime;
     private Coroutine _currentCoroutine;
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
