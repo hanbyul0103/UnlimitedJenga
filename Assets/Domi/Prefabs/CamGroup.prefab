@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitTarget: {fileID: 8147214463269689921}
-  padding: 0.1
+  padding: 0.2
   upSize: 3
   overHeight: 5
   minHeight: 4.85
