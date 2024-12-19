@@ -14,12 +14,14 @@ public class GroundDetectBlock : MonoBehaviour, IBlockOutHandler
     private Dictionary<GroundDetectBlock, System.Action<GroundBox>> blockEventHandlers = new();
 
     public event System.Action<GroundBox> OnChangeGround;
+    private bool willRemove = false;
     
     private void Awake() {
         _collider = GetComponent<Collider2D>();
     }
 
     public void GroundToutch(GroundBox box) {
+        if (willRemove) return; // ㄴㄴ
         groundBox = box;
         box.AddBlock(this);
 
@@ -75,6 +77,7 @@ public class GroundDetectBlock : MonoBehaviour, IBlockOutHandler
             GroundExit();
 
         // 곧 삭제됨
+        willRemove = true;
         Destroy(gameObject, 3f);
     }
     
