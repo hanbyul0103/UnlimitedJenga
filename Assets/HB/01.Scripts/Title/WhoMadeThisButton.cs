@@ -2,13 +2,13 @@ using DG.Tweening;
 using System;
 using UnityEngine;
 
-public class SettingButton : TitleButton
+public class WhoMadeThisButton : TitleButton
 {
     public event Action<float> OnExitEvent;
 
     [SerializeField] private Transform _originPos;
     [SerializeField] private Transform _targetPos;
-    [SerializeField] private SettingPanel _target;
+    [SerializeField] private TitlePanel _target;
 
     private bool _isTweening = false;
 

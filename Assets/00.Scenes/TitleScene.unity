@@ -119,37 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &65666972
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 65666973}
-  m_Layer: 0
-  m_Name: SettingOriginPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &65666973
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65666972}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18, y: 0, z: -4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &66776080
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +132,7 @@ GameObject:
   - component: {fileID: 66776084}
   - component: {fileID: 66776083}
   m_Layer: 0
-  m_Name: SettingPanel
+  m_Name: WhoMadeThisPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dd45e439abdee42827ce09efbbd4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _count: 0
 --- !u!61 &66776084
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -668,6 +638,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9, y: 3}
   m_EdgeRadius: 0
+--- !u!1 &337748695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 337748696}
+  m_Layer: 0
+  m_Name: WhoMadeThisOriginPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &337748696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337748695}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18, y: 0, z: -4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &370735029
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +713,7 @@ GameObject:
   - component: {fileID: 532562888}
   - component: {fileID: 532562889}
   m_Layer: 0
-  m_Name: LogButton
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1119,7 +1120,7 @@ GameObject:
   - component: {fileID: 1012682380}
   - component: {fileID: 1012682381}
   m_Layer: 0
-  m_Name: SettingButton
+  m_Name: WhoMadeThisButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1253,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df6f48df3892b843a405214c32e8052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _originPos: {fileID: 65666973}
+  _originPos: {fileID: 337748696}
   _targetPos: {fileID: 1301121524}
   _target: {fileID: 66776083}
 --- !u!1 &1034313692
@@ -1499,7 +1500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1301121524}
   m_Layer: 0
-  m_Name: SettingTargetPos
+  m_Name: PanelTargetPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2667,5 +2668,5 @@ SceneRoots:
   - {fileID: 1386043245}
   - {fileID: 1105571058}
   - {fileID: 66776082}
+  - {fileID: 337748696}
   - {fileID: 1301121524}
-  - {fileID: 65666973}

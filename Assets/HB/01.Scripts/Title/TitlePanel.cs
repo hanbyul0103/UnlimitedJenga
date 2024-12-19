@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class SettingPanel : MonoBehaviour
+public class TitlePanel : MonoBehaviour
 {
     public event Action<float> OnExitPanelEvent;
     [SerializeField] private int _count;

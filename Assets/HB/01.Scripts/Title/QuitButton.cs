@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class LogButton : TitleButton
+public class QuitButton : TitleButton
 {
     protected override void HandleOnTimerEndEvent(float duration)
     {
-        Debug.Log("asdf");
+        Application.Quit();
+        Debug.Log("Quit");
     }
 }
