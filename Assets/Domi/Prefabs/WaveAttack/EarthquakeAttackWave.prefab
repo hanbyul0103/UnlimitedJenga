@@ -48,6 +48,7 @@ MonoBehaviour:
   shakeStrength: 5
   shakeSpeed: 10
   effectSound: {fileID: 8300000, guid: 08cb9a465ac1d174093a58da11d25f1f, type: 3}
+  waveSystem: {fileID: 11400000, guid: 68240ebeb61bcae48bb4ccc4a9cc78b5, type: 2}
 --- !u!82 &3013809653562106661
 AudioSource:
   m_ObjectHideFlags: 0

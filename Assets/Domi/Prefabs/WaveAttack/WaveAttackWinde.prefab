@@ -51,6 +51,7 @@ MonoBehaviour:
     m_Bits: 128
   pushValue: 5
   windSound: {fileID: 8300000, guid: 09506393ab781f74b9265af5d699abfe, type: 3}
+  waveSystem: {fileID: 11400000, guid: 68240ebeb61bcae48bb4ccc4a9cc78b5, type: 2}
 --- !u!82 &3122828189214693660
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ public class EarthquakeAttackWave : WaveAttackBase
     private float currentStrength = 0.0f;
     [SerializeField] private AudioClip effectSound;
     private AudioSource audioSource;
+    [SerializeField] private WaveSystemSO waveSystem;
 
 
     Rigidbody2D[] shakeBlocks;
@@ -20,8 +22,19 @@ public class EarthquakeAttackWave : WaveAttackBase
         cam = FindAnyObjectByType<WaveAttackCam>();
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = effectSound;
+        // waveSystem.OnGameOver += HandleGameOver;
     }
-    
+
+    private void HandleGameOver()
+    {
+        if (audioSource.isPlaying)
+            audioSource.Stop();
+    }
+
+    private void OnDestroy() {
+        // waveSystem.OnGameOver -= HandleGameOver;
+    }
+
     public override void AttackStart(Vector2 rangeY)
     {
         GroundDetectBlock[] blocks = FindObjectsByType<GroundDetectBlock>(FindObjectsSortMode.None);
@@ -30,11 +43,6 @@ public class EarthquakeAttackWave : WaveAttackBase
 
         currentStrength = shakeStrength;
         StartCoroutine(EarthquakeEffect());
-    }
-
-    private void OnDestroy() {
-        if (audioSource.isPlaying)
-            audioSource.Stop();
     }
     
     IEnumerator EarthquakeEffect() {
@@ -56,5 +64,8 @@ public class EarthquakeAttackWave : WaveAttackBase
             if (block != null)
                 block.AddForce(Vector2.right * x);
         }
+
+        if (Mathf.Approximately(Time.timeScale, 0))
+            HandleGameOver();
     }
 }

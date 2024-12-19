@@ -8,6 +8,7 @@ public class WaveAttackWinde : WaveAttackBase
     [SerializeField] private LayerMask blockLayer;
     [SerializeField] private float pushValue = 50f;
     [SerializeField] private AudioClip windSound;
+    [SerializeField] private WaveSystemSO waveSystem;
 
     ParticleSystem particle;
     Vector2 rangeY;
@@ -17,6 +18,13 @@ public class WaveAttackWinde : WaveAttackBase
     private void Awake() {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = windSound;
+        // waveSystem.OnGameOver += HandleGameOver;
+    }
+
+    private void HandleGameOver()
+    {
+        if (audioSource.isPlaying)
+            audioSource.Stop();
     }
 
     public override void AttackStart(Vector2 val)
@@ -29,8 +37,8 @@ public class WaveAttackWinde : WaveAttackBase
     private void OnDestroy() {
         if (particle)
             Destroy(particle.gameObject);
-        if (audioSource.isPlaying)
-            audioSource.Stop();
+
+        // waveSystem.OnGameOver -= HandleGameOver;
     }
 
     IEnumerator WineEffect() {
@@ -85,5 +93,8 @@ public class WaveAttackWinde : WaveAttackBase
         }
     }
 
-    
+    private void Update() {
+        if (Mathf.Approximately(Time.timeScale, 0))
+            HandleGameOver();
+    }
 }
