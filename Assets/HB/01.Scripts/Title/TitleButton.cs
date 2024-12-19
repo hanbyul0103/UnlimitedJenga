@@ -1,15 +1,38 @@
+using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public abstract class TitleButton : MonoBehaviour
 {
     private int _count;
-    private float _coolTime = 3;
-    private float _startTime;
+    protected float _coolTime = 3;
+    protected float _startTime;
     private Coroutine _currentCoroutine;
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    public event Action<float> OnTimerEndEvent;
+
+    public virtual void Awake()
+    {
+        OnTimerEndEvent += HandleOnTimerEndEvent;
+    }
+
+    private IEnumerator Timer()
+    {
+        while (true)
+        {
+            if (_startTime + _coolTime <= Time.time)
+            {
+                OnTimerEndEvent?.Invoke(1);
+                yield break;
+            }
+
+            yield return null;
+        }
+    }
+
+    protected abstract void HandleOnTimerEndEvent(float duration);
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -18,12 +41,12 @@ public abstract class TitleButton : MonoBehaviour
             if (_count == 2)
             {
                 _startTime = Time.time;
-                _currentCoroutine = StartCoroutine(Timer("GameScene"));
+                _currentCoroutine = StartCoroutine(Timer());
             }
         }
     }
 
-    protected virtual void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -37,17 +60,8 @@ public abstract class TitleButton : MonoBehaviour
         }
     }
 
-    private IEnumerator Timer(string sceneName)
+    private void OnDestroy()
     {
-        while (true)
-        {
-            if (_startTime + _coolTime <= Time.time)
-            {
-                SceneManager.LoadScene(sceneName);
-                yield break;
-            }
-
-            yield return null;
-        }
+        OnTimerEndEvent -= HandleOnTimerEndEvent;
     }
 }
