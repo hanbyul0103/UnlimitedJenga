@@ -17,6 +17,7 @@ public class PlayerControlSO : ScriptableObject, Controls.IPlayerActions
     public event Action MoveEvent;
     public event Action<bool> RotateLEvent;
     public event Action<bool> RotateREvent;
+    public event Action<bool> ShiftEvent;
 
     private Controls controls = null;
 
@@ -70,5 +71,13 @@ public class PlayerControlSO : ScriptableObject, Controls.IPlayerActions
             RotateLEvent?.Invoke(true);
         else if (context.canceled)
             RotateLEvent?.Invoke(false);
+    }
+
+    public void OnSlow(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            ShiftEvent?.Invoke(true);
+        else if (context.canceled)
+            ShiftEvent?.Invoke(false);
     }
 }

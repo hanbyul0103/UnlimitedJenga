@@ -8,6 +8,13 @@
       "processors": "null"
     },
     {
+      "action": "Player/Slow",
+      "id": "5727afe1-c1ce-4fc4-b46d-24ee527150b2",
+      "path": "<Keyboard>/rightShift",
+      "interactions": "null",
+      "processors": "null"
+    },
+    {
       "action": "Player/RotateR",
       "id": "dae2d75c-a865-4b02-89bc-43a47d1273bc",
       "path": "<Keyboard>/o",

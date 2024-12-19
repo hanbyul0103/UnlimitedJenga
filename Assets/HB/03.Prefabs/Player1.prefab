@@ -177,7 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  slowMoveSpeed: 1.5
   rotateSpeed: 5
+  slowRotateSpeed: 1.5
 --- !u!60 &7037611758500285477
 PolygonCollider2D:
   m_ObjectHideFlags: 0

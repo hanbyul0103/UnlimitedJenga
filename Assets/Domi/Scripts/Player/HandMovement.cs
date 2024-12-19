@@ -4,11 +4,14 @@ using UnityEngine;
 public class HandMovement : AgentMovement
 {
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float slowMoveSpeed = 3f;
     [SerializeField] private float rotateSpeed = 5f;
+    [SerializeField] private float slowRotateSpeed = 3f;
     
     private Hand handAgent;
     private bool downRotateR = false;
     private bool downRotateL = false;
+    private bool downSlow = false;
 
     protected override void Awake() {
         base.Awake();
@@ -21,11 +24,18 @@ public class HandMovement : AgentMovement
 
         handAgent.Control.RotateREvent += HandleRotateRight;
         handAgent.Control.RotateLEvent += HandleRotateLeft;
+        handAgent.Control.ShiftEvent += HandleShift;
     }
 
     private void OnDestroy() {
         handAgent.Control.RotateREvent -= HandleRotateRight;
         handAgent.Control.RotateLEvent -= HandleRotateLeft;
+        handAgent.Control.ShiftEvent -= HandleShift;
+    }
+
+    private void HandleShift(bool value)
+    {
+        downSlow = value;
     }
 
     private void HandleRotateLeft(bool value)
@@ -44,17 +54,19 @@ public class HandMovement : AgentMovement
 
         // 방향 회전
         float plusRotate = 0;
+        float speed = downSlow ? slowRotateSpeed : rotateSpeed;
         if (downRotateR)
-            plusRotate -= rotateSpeed;
+            plusRotate -= speed;
 
         if (downRotateL)
-            plusRotate += rotateSpeed;
+            plusRotate += speed;
 
         rigid.MoveRotation(rigid.rotation + plusRotate);
     }
 
     public override void Move(Vector2 dir)
     {
-        rigid.linearVelocity = dir * moveSpeed;
+        float speed = downSlow ? slowMoveSpeed : moveSpeed;
+        rigid.linearVelocity = dir * speed;
     }
 }
