@@ -45,7 +45,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -175,7 +175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9bc23c11b3c58438d13764623e01dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmSounds: []
+  bgmSounds:
+  - name: BGM
+    clip: {fileID: 8300000, guid: e9af03f6cc403024e95afc09054212d2, type: 3}
   sfxSounds:
   - name: BlockFall
     clip: {fileID: 8300000, guid: 535876b2a9e2ca84eb52b13ba5c9685a, type: 3}
