@@ -20,6 +20,7 @@ public class ShopPanelUI : MonoBehaviour, IPopup
 
     public int Block { get; private set; }
     [SerializeField] private bool _canOpen = true;
+    private bool _wasOpened = false;
 
     private void Awake()
     {
@@ -96,6 +97,7 @@ public class ShopPanelUI : MonoBehaviour, IPopup
             {
                 OpenPopup(1);
                 _canOpen = false;
+                _wasOpened = true;
             }
         }
     }
@@ -106,10 +108,11 @@ public class ShopPanelUI : MonoBehaviour, IPopup
         {
             _count--;
 
-            if (_count == 0)
+            if (_count == 0 && _wasOpened)
             {
                 ClosePopup(1);
                 _canOpen = true;
+                _wasOpened = false;
             }
         }
     }
