@@ -13,8 +13,18 @@ MonoBehaviour:
   m_Name: BlockContainerSO
   m_EditorClassIdentifier: 
   blocks:
-  - {fileID: 6659731137782209182, guid: 44a94932b7d8c34488e67ee735f5690f, type: 3}
-  - {fileID: 730701429085575843, guid: 2b78ff3eae1c5a347a3beaa75142680c, type: 3}
-  - {fileID: 1729822313006851080, guid: 1451b44f7f0e95345b17eb2aea2b7964, type: 3}
-  - {fileID: 7033675079612661963, guid: 31a59aaaab7c7fe45866df6f55223874, type: 3}
-  - {fileID: 388399462840921019, guid: c8a60d0dac81d2b41ac5764c223baad3, type: 3}
+  - {fileID: 772495027240215176, guid: b0b0fabe1c22ae34eade2df39d770d18, type: 3}
+  - {fileID: 818257743014812152, guid: cec222e5dae0bee4cbee655b3807ca87, type: 3}
+  - {fileID: 4584854853633854345, guid: b39e9c586bab20d43a172ab383023ced, type: 3}
+  - {fileID: 6689678088532130842, guid: 80f11df90248f7e409e62ed96e9a2f10, type: 3}
+  - {fileID: 3032694367431115749, guid: d7ae957d93618074aa60bfd88faf2da0, type: 3}
+  - {fileID: 1546346010935286916, guid: 02f2c1cea5264ab4598f6e869e200ea1, type: 3}
+  - {fileID: 4158395484335871218, guid: 40a172bed9a7b434ca21909474f7b696, type: 3}
+  - {fileID: 6190975105137674102, guid: fc2a9bd0a73081a40be0983a76086cfa, type: 3}
+  - {fileID: 8054319906495491373, guid: b30ed4b6c105404448309cc688109b49, type: 3}
+  - {fileID: 1998135969598575710, guid: 5e544ce294749414fbb3d684bf97d844, type: 3}
+  - {fileID: 3969919916898779866, guid: 83eb493eb8a511647a05c8dfb41d931c, type: 3}
+  - {fileID: 3515690496514419631, guid: ce8fc4b5dc20a64478153752922262da, type: 3}
+  - {fileID: 4672363005605173074, guid: 178c02e0e74c0364b8e688b91afd02ac, type: 3}
+  - {fileID: 7740459386075930611, guid: 0bc64d0f13d825045aa5cb2bfde0046c, type: 3}
+  - {fileID: 39197311719238871, guid: 8adc45e97bf10d547a1237055fbea93b, type: 3}
